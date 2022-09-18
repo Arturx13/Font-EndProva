@@ -1,0 +1,30 @@
+﻿@using Font_End.Models.Veiculos;
+@model IEnumerable<Veiculo>
+
+
+
+
+    @foreach (var item in Model)
+    {
+        string formataStatus = item.vendido ? "Sim" : "Não";
+        <tr>
+
+            <td>@item.veiculo</td>
+            <td>@item.marca</td>
+            <td>@item.ano</td>
+            <td>@item.descricao</td>
+            <td>@formataStatus</td>
+            <td>@item.created</td>
+            <td>
+                <a href="#" id="" class="btn" rel="tooltip" data-original-title="Excluir" onclick="Edit('@item.id')"><i class="fas fa-edit"></i></a>
+                <a href="#" id="" class="btn" rel="tooltip" data-original-title="Excluir" onclick="Excluir('@item.id')"><i class="fas fa-ban" style="color:red"></i></a>
+
+
+
+            </td>
+           
+
+        </tr>
+    }
+
+
